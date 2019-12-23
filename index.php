@@ -1,52 +1,77 @@
 <?php
 
-// $animals = [
-// 	'Cow',
-// 	'Chicken',
-// 	'Dog',
-// 	'Goat',
-// 	'Cat'
+
+
+
+// class Task
+// {
+
+// 	public $description;
+
+
+// 	public $completed = false;
+
+
+// 	public function __construct($description)
+// 	{
+// 		$this->description = $description; 
+// 	}
+
+
+// 	public function complete()
+// 	{
+// 		$this->completed = true;
+// 	}
+
+
+// 	public function isComplete()
+// 	{
+// 		return $this->completed;
+// 	}
+
+// }
+
+
+// $tasks = [
+
+// 	new Task('Go to market'),
+// 	new Task('Complete assignment'),
+// 	new Task('Cook dinner')
+
 // ];
 
-// $myself = [
-// 	'age' => 27,
-// 	'hair' => 'Black',
-// 	'profession' => 'software tester',
-// 	'siblings' => 2
+// $tasks[0]->complete();
 
-//  ];
+// require 'function.php';
 
-//  $myself['name'] = 'Grace'; 
-//  unset($myself['age']);
-
-
- // echo $myself['age'];
-
- // var_dump($myself);
- //   die();
- 
- //   die(var_dump($myself));
-
-
-$task = [
-	'title' => 'Going to the market',
-	'due' => 'Tomorrow',
-	'assigned_to' => 'Grace',
-	'completed' => false
-];
-
-$task['transport'] = 'Car';
-unset($task['due']);
-
-echo $task['title'];
+$database = require 'core/bootstrap.php';
 
 
 
-// die();
-// var_dump($task);
+// require 'Task.php';
 
 
 
 
-require 'index.view.php';
+
+
+// dd($tasks);
+
+
+// $router = new Router;
+
+
+// require 'routes.php';
+
+
+
+
+
+
+
+require Router::load('routes.php')
+->direct(Request::uri());
+
+
+
 
