@@ -1,22 +1,29 @@
 <?php
 
-$config = require 'config.php';
+
+App::bind('config', require 'config.php');
 
 
-require 'core/Router.php'; 
+App::bind('database', new QueryBuilder(
 
-require 'core/Request.php';
+	Connection::make(App::get('config')['database'])
 
-require 'core/database/Connection.php';
+));
 
-require 'core/database/QueryBuilder.php';
+
+// $app = [];
+
+// $app['config'] = require 'config.php';
+
+
+//  
 
 // $pdo = Connection::make();
 
 // return new QueryBuilder($pdo);
 
-return new QueryBuilder(
+// $app['database'] = new QueryBuilder(
 
-	Connection::make($config['database'])
+// 	Connection::make($app['config']['database'])
 
-); 
+// ); 

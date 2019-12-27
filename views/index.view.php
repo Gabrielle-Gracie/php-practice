@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-	<meta charset="utf-8">
-	<title>Document</title>
-
-</head>
-<body>
-
-
-	<?php require('partial/nav.php'); ?>
+ <?php require ('partial/head.php'); ?>
 
 	<h1>My Tasks</h1>
 
@@ -34,5 +23,19 @@
 
 	</ul>
 
-</body>
-</html>
+	<?php foreach ($users as $user) : ?>
+
+		<li><?= $user->name; ?></li>
+
+	<?php endforeach; ?>
+
+
+	<h1>Submit your name</h1>
+
+	<form method="POST" action="/names">
+		<input type="text" name="name">
+		<button type="submit">Submit</button>
+
+	</form>
+
+<?php require ('partial/footer.php'); ?>
